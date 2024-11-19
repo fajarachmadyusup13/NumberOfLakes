@@ -49,10 +49,12 @@ func numOfLakes(grid [][]string) int {
 
 // neighbourCheck for checking neighbour of each node, and it's done recursively
 func neighbourCheck(i, j int, grid [][]string) {
+	// validity checking for neighbour node
 	if i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || grid[i][j] != "." {
 		return
 	}
-	// if a node was visited, remark it as land or change it from '.' to '#', so it would be not visited again on future iteration
+
+	// if a node was visited, remark it as land or change it from '.' to '#', so it would not be visited again on future iteration
 	grid[i][j] = "#"
 
 	neighbourCheck(i+1, j, grid)   // bottom neighbour
